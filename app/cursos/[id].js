@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useLocalSearchParams, useSearchParams, useSegments, Stack } from 'expo-router';
+import { useLocalSearchParams, Stack } from 'expo-router';
 import { Video } from 'expo-video';
 import Markdown from 'react-native-markdown-display';
 
+// imports JSON (como ya los tienes)
 import html from '../../assets/data/html.json';
 import css from '../../assets/data/css.json';
 import javascript from '../../assets/data/javascript.json';
@@ -18,37 +19,24 @@ import flutter from '../../assets/data/flutter.json';
 import ciberseguridad from '../../assets/data/ciberseguridad.json';
 
 const cursosMap = {
-    'html': html,
-    'css': css,
-    'javascript': javascript,
-    'python': python,
-    'php': php,
-    'sql': sql,
-    'nodejs': nodejs,
-    'framework7': framework7,
-    'react': react,
-    'reactnative': reactnative,
-    'flutter': flutter,
-    'ciberseguridad': ciberseguridad
+    html,
+    css,
+    javascript,
+    python,
+    php,
+    sql,
+    nodejs,
+    framework7,
+    react,
+    reactnative,
+    flutter,
+    ciberseguridad,
 };
 
 const { width } = Dimensions.get('window');
 
 export default function IdCurso() {
-    // Intentamos obtener el id desde varias fuentes para evitar casos donde llegue vacío
-    const localParams = useLocalSearchParams();
-    const searchParams = useSearchParams();
-    const segments = useSegments();
-
-    let { id } = localParams || {};
-    if (!id && searchParams) id = searchParams.id;
-    if (!id && segments && segments.length) id = segments[segments.length - 1];
-
-    // Normalizar a string (o cadena vacía)
-    id = id ? String(id) : '';
-
-    // Debug útil en consola (se puede eliminar luego)
-
+    const { id } = useLocalSearchParams();
     const cursoData = cursosMap[id] || null;
 
     if (!cursoData) {
@@ -62,36 +50,16 @@ export default function IdCurso() {
 
     return (
         <ScrollView style={styles.body}>
-
-            {/* Título de la cabecera de la Stack */}
             <Stack.Screen options={{ title: cursoData.name }} />
-
-            {/* Título Principal y Descripción General del Curso */}
-            <Text style={styles.title}>
-                {cursoData.name}
-            </Text>
-
-            <Text style={styles.description}>
-                {cursoData.description}
-            </Text>
+            <Text style={styles.title}>{cursoData.name}</Text>
+            <Text style={styles.description}>{cursoData.description}</Text>
 
             <Text style={styles.subtitle}>Contenido por Módulo</Text>
-
-            {/* MAPEO 1: Recorre los MÓDULOS */}
             {cursoData.modulos.map((modulo, i) => (
-                <View
-                    key={modulo.id || i}
-                    style={styles.moduloContainer}
-                >
-                    {/* Título y Descripción del Módulo */}
-                    <Text style={styles.moduloTitle}>
-                        {modulo.id}. {modulo.title}
-                    </Text>
-                    <Text style={styles.moduloDescription}>
-                        {modulo.description}
-                    </Text>
+                <View key={modulo.id || i} style={styles.moduloContainer}>
+                    <Text style={styles.moduloTitle}>{modulo.id}. {modulo.title}</Text>
+                    <Text style={styles.moduloDescription}>{modulo.description}</Text>
 
-                    {/* LUGAR DEL VIDEO */}
                     {modulo.video && modulo.video !== "AQUI_URL_DE_VIDEO_SUPABASE" && (
                         <View style={styles.videoWrapper}>
                             <Video
@@ -99,35 +67,21 @@ export default function IdCurso() {
                                 source={{ uri: modulo.video }}
                                 useNativeControls
                                 resizeMode="contain"
-                                isLooping={false}
                             />
                         </View>
                     )}
 
                     <Text style={styles.leccionesHeader}>Lecciones:</Text>
-
-                    {/* MAPEO 2: Recorre las LECCIONES y MUESTRA TODO */}
                     {modulo.lecciones.map((leccion, j) => (
                         <View key={leccion.id || j} style={styles.leccionItem}>
-
-                            {/* Título de la Lección */}
-                            <Text style={styles.leccionTitle}>
-                                - {leccion.title}
-                            </Text>
-
-                            {/* EXPLICACIÓN COMPLETA CON FORMATO MARKDOWN */}
-                            <Markdown style={markdownStyles}>
-                                {leccion.explicacion}
-                            </Markdown>
-
+                            <Text style={styles.leccionTitle}>- {leccion.title}</Text>
+                            <Markdown style={markdownStyles}>{leccion.explicacion}</Markdown>
                         </View>
                     ))}
 
-                    {/* DATO CURIOSO/IMPORTANTE */}
                     <Text style={styles.dato}>
                         <Text style={{ fontWeight: 'bold' }}>Dato:</Text> {modulo.dato}
                     </Text>
-
                 </View>
             ))}
 
@@ -135,6 +89,7 @@ export default function IdCurso() {
         </ScrollView>
     );
 }
+
 
 
 // Estilos para el renderizado de Markdown
