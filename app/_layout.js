@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 export default function Layout() {
   return (
     <View style={{ flex: 1, backgroundColor: '#11131f' }}>
-      <StatusBar style="light" />
+      <StatusBar style="light" backgroundColor="#11131f" />
       <Stack
         screenOptions={{
           headerStyle: { backgroundColor: '#1c1e2b' },

@@ -101,7 +101,7 @@ export default function Cursos() {
                     </Link>
                </View>
 
-               <StatusBar style="auto" />
+               <StatusBar style="light" />
           </ScrollView>
      );
 }

@@ -20,7 +20,7 @@ export default function About() {
         <Text style={styles.description}>Los proyectos, que se elaboran en el transcurso de los cursos, se hospedan en un repositorio de GitHub, exactamente: </Text>
       </View>
       
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </ScrollView>
   );
 }

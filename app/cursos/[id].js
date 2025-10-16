@@ -85,7 +85,7 @@ export default function IdCurso() {
                 </View>
             ))}
 
-            <StatusBar style="auto" />
+            <StatusBar style="light" />
         </ScrollView>
     );
 }

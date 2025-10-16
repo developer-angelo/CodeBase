@@ -45,7 +45,7 @@ export default function Home() {
           <Text style={styles.text}>En CodeBase, valoramos la colaboración y la comunidad. Por eso, todos nuestros cursos están basados en proyectos open-source. Esto significa que puedes contribuir al desarrollo de estos proyectos y mejorar tus habilidades de programación al mismo tiempo.</Text>
         </View>
       </View>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </ScrollView>
   );
 }
