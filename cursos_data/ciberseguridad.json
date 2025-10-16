@@ -1,0 +1,151 @@
+{
+    "id": "kali_linux",
+    "name": "Curso intensivo de Kali Linux",
+    "description": "Aprende Kali Linux y ciberseguridad: desde comandos básicos hasta hacking ético y pruebas de penetración 🔐.",
+    "modulos": [
+        {
+            "id": 1,
+            "title": "Introducción a Kali Linux",
+            "description": "Conocerás qué es Kali Linux, su historia y cómo instalarlo.",
+            "lecciones": [
+                {
+                    "id": "a1",
+                    "title": "¿Qué es Kali Linux?",
+                    "explicacion": "Kali Linux es una distribución de Linux basada en Debian, orientada a pruebas de penetración y auditoría de seguridad, con herramientas preinstaladas para hacking ético."
+                },
+                {
+                    "id": "a2",
+                    "title": "Historia y evolución",
+                    "explicacion": "Kali Linux fue lanzado en 2013 por Offensive Security, como sucesor de BackTrack, y se ha convertido en la referencia para profesionales de seguridad informática."
+                },
+                {
+                    "id": "a3",
+                    "title": "Instalación y entorno",
+                    "explicacion": "Se puede instalar en máquina virtual, como dual boot o en hardware nativo. Requiere conocer Linux básico y comandos para aprovechar todas sus herramientas."
+                }
+            ],
+            "video": "",
+            "dato": "Kali Linux es el estándar para hacking ético y pruebas de seguridad profesionales."
+        },
+        {
+            "id": 2,
+            "title": "Comandos básicos de Linux",
+            "description": "Aprenderás los comandos esenciales de Linux para moverte y manipular archivos en la terminal.",
+            "lecciones": [
+                {
+                    "id": "b1",
+                    "title": "Navegación en terminal",
+                    "explicacion": "Comandos como `ls`, `cd`, `pwd` y `tree` permiten moverte y explorar directorios."
+                },
+                {
+                    "id": "b2",
+                    "title": "Gestión de archivos y permisos",
+                    "explicacion": "Comandos `cp`, `mv`, `rm`, `chmod`, `chown` permiten copiar, mover, eliminar archivos y gestionar permisos de usuarios."
+                },
+                {
+                    "id": "b3",
+                    "title": "Procesos y redes",
+                    "explicacion": "Comandos como `ps`, `top`, `netstat`, `ifconfig` y `ping` permiten monitorizar procesos y conexiones de red."
+                }
+            ],
+            "video": "",
+            "dato": "Dominar la terminal es esencial para aprovechar Kali Linux al máximo."
+        },
+        {
+            "id": 3,
+            "title": "Fundamentos de ciberseguridad",
+            "description": "Aprenderás los conceptos básicos de seguridad informática y hacking ético.",
+            "lecciones": [
+                {
+                    "id": "c1",
+                    "title": "Tipos de ciberataques",
+                    "explicacion": "Conocerás ataques como phishing, malware, ransomware, SQL injection, XSS y DDoS, y cómo protegerse de ellos."
+                },
+                {
+                    "id": "c2",
+                    "title": "Hacking ético",
+                    "explicacion": "El hacking ético consiste en probar sistemas de manera legal para detectar vulnerabilidades y mejorar la seguridad."
+                },
+                {
+                    "id": "c3",
+                    "title": "Modelos de seguridad",
+                    "explicacion": "Aprenderás sobre CIA (Confidentiality, Integrity, Availability), defensa en profundidad y políticas de seguridad."
+                }
+            ],
+            "video": "",
+            "dato": "Comprender la seguridad informática es la base antes de usar herramientas de hacking."
+        },
+        {
+            "id": 4,
+            "title": "Herramientas de Kali Linux",
+            "description": "Aprenderás a usar las herramientas más populares para auditoría de seguridad.",
+            "lecciones": [
+                {
+                    "id": "d1",
+                    "title": "Nmap y escaneo de redes",
+                    "explicacion": "Nmap permite escanear puertos, servicios y hosts en la red: `nmap -sV 192.168.1.1`"
+                },
+                {
+                    "id": "d2",
+                    "title": "Metasploit",
+                    "explicacion": "Framework para pruebas de penetración, explotando vulnerabilidades de manera controlada."
+                },
+                {
+                    "id": "d3",
+                    "title": "Wireshark y análisis de tráfico",
+                    "explicacion": "Wireshark permite capturar y analizar paquetes de red para detectar vulnerabilidades y ataques."
+                }
+            ],
+            "video": "",
+            "dato": "Estas herramientas permiten evaluar la seguridad de sistemas y redes de forma profesional."
+        },
+        {
+            "id": 5,
+            "title": "Explotación y pruebas de penetración",
+            "description": "Aprenderás técnicas de hacking ético y pruebas de penetración controladas.",
+            "lecciones": [
+                {
+                    "id": "e1",
+                    "title": "Escaneo y reconocimiento",
+                    "explicacion": "Identificar hosts, puertos abiertos y servicios para evaluar el objetivo antes de intentar explotar vulnerabilidades."
+                },
+                {
+                    "id": "e2",
+                    "title": "Explotación de vulnerabilidades",
+                    "explicacion": "Usando Metasploit, scripts y exploits para probar la seguridad de sistemas de manera ética y controlada."
+                },
+                {
+                    "id": "e3",
+                    "title": "Post-explotación",
+                    "explicacion": "Recopilar información, mantener acceso controlado y generar reportes de seguridad sin dañar el sistema."
+                }
+            ],
+            "video": "",
+            "dato": "El objetivo es mejorar la seguridad, no causar daño; siempre realiza pruebas de manera legal."
+        },
+        {
+            "id": 6,
+            "title": "Seguridad avanzada y buenas prácticas",
+            "description": "Aprenderás a proteger sistemas y practicar hacking ético de manera profesional.",
+            "lecciones": [
+                {
+                    "id": "f1",
+                    "title": "Hardening de sistemas",
+                    "explicacion": "Aplicar configuraciones seguras, parches y políticas para proteger servidores y estaciones de trabajo."
+                },
+                {
+                    "id": "f2",
+                    "title": "Auditoría y reporting",
+                    "explicacion": "Registrar vulnerabilidades, generar reportes claros y proponer soluciones efectivas."
+                },
+                {
+                    "id": "f3",
+                    "title": "Ética y legalidad",
+                    "explicacion": "Siempre obtener permisos antes de realizar pruebas de penetración, respetando leyes y normas de ciberseguridad."
+                }
+            ],
+            "video": "",
+            "dato": "El hacking ético requiere responsabilidad, conocimientos técnicos y respeto por la ley."
+        }
+    ]
+}

@@ -1,0 +1,175 @@
+{
+    "id": "react_native",
+    "name": "Curso intensivo de React Native",
+    "description": "Aprende React Native para crear aplicaciones móviles nativas usando JavaScript y React, compatibles con iOS y Android 📲.",
+    "modulos": [
+        {
+            "id": 1,
+            "title": "Introducción a React Native",
+            "description": "Conocerás qué es React Native, su historia y cómo instalarlo en tu entorno de desarrollo.",
+            "lecciones": [
+                {
+                    "id": "a1",
+                    "title": "¿Qué es React Native?",
+                    "explicacion": "React Native es un framework de JavaScript que permite construir aplicaciones móviles nativas para iOS y Android usando componentes de React."
+                },
+                {
+                    "id": "a2",
+                    "title": "Historia de React Native",
+                    "explicacion": "Creado por Facebook en 2015, React Native permite escribir una sola base de código para múltiples plataformas, aprovechando componentes nativos y rendimiento cercano al nativo."
+                },
+                {
+                    "id": "a3",
+                    "title": "Instalación y entorno",
+                    "explicacion": "Se puede instalar usando Expo (`npm install -g expo-cli`) o React Native CLI. Expo facilita el desarrollo y pruebas rápidas, mientras que React Native CLI da mayor control sobre el proyecto."
+                }
+            ],
+            "video": "",
+            "dato": "React Native combina la simplicidad de React con la capacidad de crear apps móviles nativas."
+        },
+        {
+            "id": 2,
+            "title": "Componentes básicos",
+            "description": "Aprenderás los componentes principales de React Native para construir interfaces móviles.",
+            "lecciones": [
+                {
+                    "id": "b1",
+                    "title": "View y Text",
+                    "explicacion": "`View` es como un contenedor y `Text` se usa para mostrar texto. Son componentes básicos para cualquier pantalla."
+                },
+                {
+                    "id": "b2",
+                    "title": "ScrollView y FlatList",
+                    "explicacion": "`ScrollView` permite desplazamiento vertical u horizontal, mientras que `FlatList` es ideal para listas grandes de datos con rendimiento optimizado."
+                },
+                {
+                    "id": "b3",
+                    "title": "Botones e inputs",
+                    "explicacion": "Puedes usar `Button`, `TouchableOpacity` y `TextInput` para manejar interacciones de usuario y capturar datos."
+                }
+            ],
+            "video": "",
+            "dato": "Estos componentes forman la base de cualquier app móvil en React Native."
+        },
+        {
+            "id": 3,
+            "title": "Props, state y eventos",
+            "description": "Aprenderás a manejar datos y responder a interacciones del usuario en tus componentes.",
+            "lecciones": [
+                {
+                    "id": "c1",
+                    "title": "Props",
+                    "explicacion": "Permiten pasar información de un componente padre a uno hijo: `<Saludo nombre='Angelo' />`. Son inmutables dentro del componente hijo."
+                },
+                {
+                    "id": "c2",
+                    "title": "State",
+                    "explicacion": "El estado interno de un componente se maneja con `useState`: `const [count, setCount] = useState(0);` y se puede actualizar según interacción del usuario."
+                },
+                {
+                    "id": "c3",
+                    "title": "Eventos",
+                    "explicacion": "Eventos como `onPress`, `onChangeText` permiten capturar interacciones: `<Button onPress={() => setCount(count+1)} title='+' />`"
+                }
+            ],
+            "video": "",
+            "dato": "Props y state hacen que tus componentes sean dinámicos y reactivos a la interacción del usuario."
+        },
+        {
+            "id": 4,
+            "title": "Estilos y diseño",
+            "description": "Aprenderás a diseñar tus apps con estilos flexibles y adaptables a distintas pantallas.",
+            "lecciones": [
+                {
+                    "id": "d1",
+                    "title": "StyleSheet",
+                    "explicacion": "React Native usa `StyleSheet.create({})` para definir estilos, similar a CSS: `const styles = StyleSheet.create({ container: { flex: 1, backgroundColor: '#fff' } });`"
+                },
+                {
+                    "id": "d2",
+                    "title": "Flexbox",
+                    "explicacion": "Flexbox permite distribuir elementos de manera flexible: `flexDirection`, `justifyContent`, `alignItems` son propiedades esenciales para layouts móviles."
+                },
+                {
+                    "id": "d3",
+                    "title": "Responsividad",
+                    "explicacion": "Usa porcentajes, dimensiones relativas y `Dimensions` para adaptar tu UI a distintos tamaños de pantalla y dispositivos."
+                }
+            ],
+            "video": "",
+            "dato": "Estilos bien aplicados hacen que tu app se vea profesional y funcione bien en cualquier dispositivo."
+        },
+        {
+            "id": 5,
+            "title": "Navegación y rutas",
+            "description": "Aprenderás a crear múltiples pantallas y moverte entre ellas.",
+            "lecciones": [
+                {
+                    "id": "e1",
+                    "title": "React Navigation",
+                    "explicacion": "Es la librería estándar para manejar rutas: `npm install @react-navigation/native`. Permite stacks, tabs y drawer navigators."
+                },
+                {
+                    "id": "e2",
+                    "title": "Stack Navigator",
+                    "explicacion": "Permite navegar entre pantallas con historial: `<Stack.Screen name='Home' component={Home} />` y `navigation.navigate('Profile')`."
+                },
+                {
+                    "id": "e3",
+                    "title": "Tab y Drawer Navigator",
+                    "explicacion": "Tab Navigator crea navegación por pestañas, mientras que Drawer Navigator permite un menú lateral deslizante."
+                }
+            ],
+            "video": "",
+            "dato": "La navegación estructurada permite construir apps móviles completas y fáciles de usar."
+        },
+        {
+            "id": 6,
+            "title": "Integración con APIs y almacenamiento",
+            "description": "Aprenderás a obtener datos externos y almacenarlos localmente en tu app.",
+            "lecciones": [
+                {
+                    "id": "f1",
+                    "title": "Consumir APIs",
+                    "explicacion": "Usa `fetch` o Axios para obtener datos de servidores y mostrarlos en tus componentes: `useEffect(() => { fetch(url).then(res => res.json()).then(data => setData(data)); }, []);`"
+                },
+                {
+                    "id": "f2",
+                    "title": "AsyncStorage",
+                    "explicacion": "Permite almacenar datos de manera persistente: `await AsyncStorage.setItem('user', JSON.stringify(user));` y recuperarlos con `getItem`."
+                },
+                {
+                    "id": "f3",
+                    "title": "Integración con backend",
+                    "explicacion": "React Native se integra con Node.js, Firebase, SQLite u otras bases de datos para construir apps completas y dinámicas."
+                }
+            ],
+            "video": "",
+            "dato": "Integrar tu app con APIs y almacenamiento local permite funcionalidades completas incluso sin conexión constante."
+        },
+        {
+            "id": 7,
+            "title": "Buenas prácticas y optimización",
+            "description": "Aprenderás a escribir apps React Native limpias, mantenibles y eficientes.",
+            "lecciones": [
+                {
+                    "id": "g1",
+                    "title": "Organización de proyectos",
+                    "explicacion": "Separar componentes, pantallas, estilos y servicios mantiene el proyecto ordenado y escalable."
+                },
+                {
+                    "id": "g2",
+                    "title": "Optimización de rendimiento",
+                    "explicacion": "Usa `FlatList`, `memo`, `useCallback` y evita renders innecesarios para apps rápidas y fluidas."
+                },
+                {
+                    "id": "g3",
+                    "title": "Testing y depuración",
+                    "explicacion": "Usa React Native Debugger, Expo DevTools y librerías de testing como Jest para asegurar el correcto funcionamiento de la app."
+                }
+            ],
+            "video": "",
+            "dato": "Apps bien organizadas y optimizadas ofrecen la mejor experiencia de usuario y facilitan el mantenimiento."
+        }
+    ]
+}

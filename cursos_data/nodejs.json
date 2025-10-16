@@ -1,0 +1,151 @@
+{
+    "id": "nodejs",
+    "name": "Curso intensivo de Node.js",
+    "description": "Aprende Node.js, el entorno de ejecución de JavaScript en el servidor, para crear aplicaciones rápidas, escalables y modernas 🖥️.",
+    "modulos": [
+        {
+            "id": 1,
+            "title": "Introducción a Node.js",
+            "description": "Conocerás qué es Node.js, su historia y cómo instalarlo en tu máquina.",
+            "lecciones": [
+                {
+                    "id": "a1",
+                    "title": "¿Qué es Node.js?",
+                    "explicacion": "Node.js es un entorno de ejecución de JavaScript del lado del servidor. Permite ejecutar código JS fuera del navegador y crear aplicaciones web rápidas y escalables usando el motor V8 de Chrome."
+                },
+                {
+                    "id": "a2",
+                    "title": "Historia de Node.js",
+                    "explicacion": "Creado por Ryan Dahl en 2009, Node.js se popularizó por su arquitectura basada en eventos y su capacidad de manejar gran cantidad de conexiones concurrentes."
+                },
+                {
+                    "id": "a3",
+                    "title": "Instalación y entorno",
+                    "explicacion": "Node.js se instala desde nodejs.org y viene con npm, el gestor de paquetes. Con esto puedes instalar librerías, frameworks y herramientas necesarias para tus proyectos."
+                }
+            ],
+            "video": "",
+            "dato": "Node.js permite usar JavaScript tanto en frontend como en backend, unificando el stack."
+        },
+        {
+            "id": 2,
+            "title": "Módulos y npm",
+            "description": "Aprenderás a usar módulos, paquetes y organizar tu proyecto Node.js.",
+            "lecciones": [
+                {
+                    "id": "b1",
+                    "title": "Módulos en Node.js",
+                    "explicacion": "Node.js usa módulos para organizar el código. `require` importa módulos: `const fs = require('fs');` para trabajar con archivos."
+                },
+                {
+                    "id": "b2",
+                    "title": "npm y paquetes",
+                    "explicacion": "npm (Node Package Manager) permite instalar librerías externas: `npm install express` para agregar frameworks y herramientas al proyecto."
+                },
+                {
+                    "id": "b3",
+                    "title": "Módulos locales",
+                    "explicacion": "Puedes crear tus propios módulos exportando funciones o variables con `module.exports` y usándolos en otros archivos con `require`."
+                }
+            ],
+            "video": "",
+            "dato": "Node.js tiene un ecosistema enorme de librerías que facilitan cualquier tipo de desarrollo backend."
+        },
+        {
+            "id": 3,
+            "title": "Eventos y asincronía",
+            "description": "Aprenderás a manejar eventos y código asíncrono, clave para aplicaciones modernas en Node.js.",
+            "lecciones": [
+                {
+                    "id": "c1",
+                    "title": "Event Loop",
+                    "explicacion": "Node.js maneja operaciones asíncronas usando un Event Loop que permite procesar múltiples tareas sin bloquear el servidor."
+                },
+                {
+                    "id": "c2",
+                    "title": "Callbacks",
+                    "explicacion": "Funciones que se pasan como argumentos y se ejecutan al completar una operación asíncrona: `fs.readFile('archivo.txt', (err, data) => { console.log(data); });`"
+                },
+                {
+                    "id": "c3",
+                    "title": "Promises y async/await",
+                    "explicacion": "Las Promises y `async/await` facilitan manejar código asíncrono de forma más clara y legible."
+                }
+            ],
+            "video": "",
+            "dato": "El manejo de asincronía es la base de la eficiencia y escalabilidad de Node.js."
+        },
+        {
+            "id": 4,
+            "title": "Creando servidores con Node.js",
+            "description": "Aprenderás a crear servidores web y manejar solicitudes HTTP.",
+            "lecciones": [
+                {
+                    "id": "d1",
+                    "title": "Servidor HTTP básico",
+                    "explicacion": "Node.js permite crear servidores simples con el módulo `http`: `const http = require('http'); http.createServer((req,res) => { res.end('Hola mundo'); }).listen(3000);`"
+                },
+                {
+                    "id": "d2",
+                    "title": "Rutas y manejo de peticiones",
+                    "explicacion": "Puedes manejar rutas y distintos tipos de solicitudes HTTP (`GET`, `POST`, `PUT`, `DELETE`) usando condicionales o frameworks como Express."
+                },
+                {
+                    "id": "d3",
+                    "title": "Framework Express",
+                    "explicacion": "Express simplifica la creación de servidores y manejo de rutas: `const express = require('express'); const app = express(); app.get('/', (req,res)=>{ res.send('Hola'); }); app.listen(3000);`"
+                }
+            ],
+            "video": "",
+            "dato": "Express es el framework más usado en Node.js para crear aplicaciones web robustas y rápidas."
+        },
+        {
+            "id": 5,
+            "title": "Bases de datos con Node.js",
+            "description": "Aprenderás a conectar Node.js con bases de datos SQL y NoSQL.",
+            "lecciones": [
+                {
+                    "id": "e1",
+                    "title": "Conexión a SQLite",
+                    "explicacion": "Usando el paquete `sqlite3`, puedes conectar y ejecutar consultas a bases de datos SQLite desde Node.js."
+                },
+                {
+                    "id": "e2",
+                    "title": "Conexión a MySQL o PostgreSQL",
+                    "explicacion": "Paquetes como `mysql2` o `pg` permiten conectar Node.js a bases de datos relacionales en proyectos más grandes."
+                },
+                {
+                    "id": "e3",
+                    "title": "Operaciones CRUD",
+                    "explicacion": "Node.js puede ejecutar consultas SQL para crear, leer, actualizar y eliminar datos desde la base de datos, integrando la lógica del backend con la persistencia de datos."
+                }
+            ],
+            "video": "",
+            "dato": "Node.js puede trabajar con cualquier base de datos usando librerías adecuadas, haciendo tus aplicaciones completas y dinámicas."
+        },
+        {
+            "id": 6,
+            "title": "Buenas prácticas y seguridad en Node.js",
+            "description": "Aprenderás a escribir código profesional, seguro y mantenible.",
+            "lecciones": [
+                {
+                    "id": "f1",
+                    "title": "Estructura de proyectos",
+                    "explicacion": "Organizar carpetas y archivos, separar rutas, controladores, modelos y configuraciones mejora mantenimiento y escalabilidad."
+                },
+                {
+                    "id": "f2",
+                    "title": "Manejo de errores y logging",
+                    "explicacion": "Usar `try/catch`, middlewares de manejo de errores y librerías de logging permite depurar y mantener aplicaciones robustas."
+                },
+                {
+                    "id": "f3",
+                    "title": "Seguridad básica",
+                    "explicacion": "Validar entradas de usuarios, usar `helmet`, `cors` y proteger rutas con autenticación evita ataques comunes como inyección de código o accesos no autorizados."
+                }
+            ],
+            "video": "",
+            "dato": "Código limpio, seguro y modular es la base para aplicaciones Node.js profesionales y escalables."
+        }
+    ]
+}

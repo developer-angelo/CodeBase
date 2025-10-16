@@ -1,0 +1,151 @@
+{
+    "id": "astro",
+    "name": "Curso intensivo de Astro",
+    "description": "Aprende Astro, un framework moderno para crear sitios web rápidos, estáticos y altamente optimizados 🌐.",
+    "modulos": [
+        {
+            "id": 1,
+            "title": "Introducción a Astro",
+            "description": "Conocerás qué es Astro, su historia y cómo instalarlo.",
+            "lecciones": [
+                {
+                    "id": "a1",
+                    "title": "¿Qué es Astro?",
+                    "explicacion": "Astro es un framework moderno para construir sitios web rápidos y optimizados, usando componentes que solo cargan el JavaScript necesario."
+                },
+                {
+                    "id": "a2",
+                    "title": "Historia y filosofía",
+                    "explicacion": "Lanzado en 2021, Astro busca mejorar el rendimiento web con enfoque en contenido estático, eliminando la necesidad de cargar JavaScript innecesario."
+                },
+                {
+                    "id": "a3",
+                    "title": "Instalación y entorno",
+                    "explicacion": "Se instala con `npm create astro@latest` y permite integración con frameworks como React, Vue o Svelte para componentes dinámicos."
+                }
+            ],
+            "video": "",
+            "dato": "Astro optimiza automáticamente tu sitio, cargando solo lo necesario para mejorar velocidad y SEO."
+        },
+        {
+            "id": 2,
+            "title": "Estructura de un proyecto Astro",
+            "description": "Aprenderás a organizar un proyecto Astro y conocer sus archivos y carpetas principales.",
+            "lecciones": [
+                {
+                    "id": "b1",
+                    "title": "Archivos y carpetas principales",
+                    "explicacion": "Un proyecto Astro incluye `src/pages`, `src/components`, `public/` y `astro.config.mjs` para configurar el proyecto."
+                },
+                {
+                    "id": "b2",
+                    "title": "Páginas y rutas",
+                    "explicacion": "Cada archivo `.astro` dentro de `src/pages` se convierte en una ruta del sitio web, por ejemplo `src/pages/about.astro` genera `/about`."
+                },
+                {
+                    "id": "b3",
+                    "title": "Layouts y plantillas",
+                    "explicacion": "Puedes crear layouts reutilizables en `src/layouts` para mantener consistencia en encabezados, pies de página y estilos."
+                }
+            ],
+            "video": "",
+            "dato": "La estructura modular facilita mantenimiento y escalabilidad en proyectos Astro."
+        },
+        {
+            "id": 3,
+            "title": "Componentes y JSX/MDX",
+            "description": "Aprenderás a crear componentes reutilizables y a integrar contenido dinámico.",
+            "lecciones": [
+                {
+                    "id": "c1",
+                    "title": "Componentes Astro",
+                    "explicacion": "Se crean archivos `.astro` que exportan HTML, CSS y JavaScript encapsulados: `<Header />` y `<Footer />`."
+                },
+                {
+                    "id": "c2",
+                    "title": "Integración con frameworks",
+                    "explicacion": "Astro permite usar React, Vue, Svelte o SolidJS dentro de componentes para partes dinámicas de la web."
+                },
+                {
+                    "id": "c3",
+                    "title": "Uso de MDX",
+                    "explicacion": "Astro soporta archivos MDX (`.mdx`) para mezclar Markdown con componentes React o Astro, ideal para blogs y documentación."
+                }
+            ],
+            "video": "",
+            "dato": "Astro combina contenido estático con componentes dinámicos de manera eficiente."
+        },
+        {
+            "id": 4,
+            "title": "Estilos y assets",
+            "description": "Aprenderás a aplicar estilos y manejar recursos estáticos en Astro.",
+            "lecciones": [
+                {
+                    "id": "d1",
+                    "title": "CSS y preprocesadores",
+                    "explicacion": "Astro soporta CSS, SCSS y TailwindCSS para diseñar tus páginas de forma modular y eficiente."
+                },
+                {
+                    "id": "d2",
+                    "title": "Assets y optimización",
+                    "explicacion": "Se manejan imágenes, fuentes y scripts en `public/`. Astro optimiza automáticamente imágenes y recursos para mejorar velocidad de carga."
+                },
+                {
+                    "id": "d3",
+                    "title": "CSS Modules y scoped styles",
+                    "explicacion": "Puedes usar CSS Modules para estilos locales: `import styles from './Header.module.css';` y aplicarlos solo al componente."
+                }
+            ],
+            "video": "",
+            "dato": "El manejo eficiente de estilos y assets mejora el rendimiento y la experiencia de usuario."
+        },
+        {
+            "id": 5,
+            "title": "Contenido dinámico y APIs",
+            "description": "Aprenderás a obtener datos externos y mostrarlos en tu sitio Astro.",
+            "lecciones": [
+                {
+                    "id": "e1",
+                    "title": "Fetch de APIs",
+                    "explicacion": "Puedes usar `fetch` dentro de componentes Astro para obtener datos en tiempo de construcción: `const res = await fetch(url); const data = await res.json();`"
+                },
+                {
+                    "id": "e2",
+                    "title": "Data from Markdown",
+                    "explicacion": "Astro permite usar archivos Markdown como fuente de contenido, ideal para blogs y documentación."
+                },
+                {
+                    "id": "e3",
+                    "title": "Integración con CMS",
+                    "explicacion": "Se puede integrar con Headless CMS como Contentful, Strapi o Sanity para contenido dinámico en páginas estáticas."
+                }
+            ],
+            "video": "",
+            "dato": "Astro combina contenido estático y dinámico para sitios web rápidos y escalables."
+        },
+        {
+            "id": 6,
+            "title": "Optimización y deployment",
+            "description": "Aprenderás a optimizar tu sitio y publicarlo en producción.",
+            "lecciones": [
+                {
+                    "id": "f1",
+                    "title": "Optimización de rendimiento",
+                    "explicacion": "Astro realiza renderizado estático, carga parcial de JS y optimización de assets automáticamente para mejorar velocidad y SEO."
+                },
+                {
+                    "id": "f2",
+                    "title": "Build y exportación",
+                    "explicacion": "Usa `npm run build` para generar el sitio estático listo para producción. Los archivos se guardan en `dist/`."
+                },
+                {
+                    "id": "f3",
+                    "title": "Deployment",
+                    "explicacion": "Puedes desplegar en Netlify, Vercel, GitHub Pages o cualquier servidor que sirva archivos estáticos."
+                }
+            ],
+            "video": "",
+            "dato": "Astro facilita el deployment y asegura sitios web rápidos, SEO-friendly y confiables."
+        }
+    ]
+}

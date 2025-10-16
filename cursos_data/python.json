@@ -1,0 +1,151 @@
+{
+    "id": "python",
+    "name": "Curso intensivo de Python",
+    "description": "Aprende Python, uno de los lenguajes más populares y versátiles del mundo, ideal para desarrollo web, automatización y ciencia de datos 🐍.",
+    "modulos": [
+        {
+            "id": 1,
+            "title": "Introducción a Python",
+            "description": "Conocerás qué es Python, su historia y cómo instalarlo para comenzar a programar.",
+            "lecciones": [
+                {
+                    "id": "a1",
+                    "title": "¿Qué es Python?",
+                    "explicacion": "Python es un lenguaje de programación de alto nivel, interpretado y de propósito general, famoso por su sintaxis clara y legible. Se usa en desarrollo web, automatización, inteligencia artificial, análisis de datos y más."
+                },
+                {
+                    "id": "a2",
+                    "title": "Historia de Python",
+                    "explicacion": "Creado por Guido van Rossum en 1991, Python se ha convertido en uno de los lenguajes más populares del mundo debido a su simplicidad y versatilidad."
+                },
+                {
+                    "id": "a3",
+                    "title": "Instalación y entorno",
+                    "explicacion": "Puedes instalar Python desde python.org y usar IDEs como PyCharm, VSCode o incluso el terminal. Conocer el entorno te permite ejecutar scripts y probar código fácilmente."
+                }
+            ],
+            "video": "",
+            "dato": "Python es ideal para principiantes pero poderoso para profesionales."
+        },
+        {
+            "id": 2,
+            "title": "Variables, tipos y operadores",
+            "description": "Aprenderás a almacenar y manipular datos en Python, además de hacer operaciones básicas.",
+            "lecciones": [
+                {
+                    "id": "b1",
+                    "title": "Variables y asignación",
+                    "explicacion": "En Python no es necesario declarar el tipo de variable. Basta con escribir `nombre = 'Angelo'` o `edad = 14`. Python detecta el tipo automáticamente."
+                },
+                {
+                    "id": "b2",
+                    "title": "Tipos de datos",
+                    "explicacion": "Python maneja `int` (números enteros), `float` (decimales), `str` (cadenas de texto), `bool` (True/False), `list`, `tuple`, `dict` y `set`."
+                },
+                {
+                    "id": "b3",
+                    "title": "Operadores",
+                    "explicacion": "Incluyen aritméticos (`+`, `-`, `*`, `/`, `//`, `%`, `**`), de comparación (`==`, `!=`, `>`, `<`), lógicos (`and`, `or`, `not`) y de asignación (`=`, `+=`, `-=`)."
+                }
+            ],
+            "video": "",
+            "dato": "Conocer los tipos y operadores permite realizar cálculos y procesar información eficientemente."
+        },
+        {
+            "id": 3,
+            "title": "Condicionales y bucles",
+            "description": "Controla el flujo de tu programa tomando decisiones y repitiendo tareas automáticamente.",
+            "lecciones": [
+                {
+                    "id": "c1",
+                    "title": "Condicionales if, elif, else",
+                    "explicacion": "Permiten ejecutar código según condiciones: `if edad >= 18: print('Mayor de edad') else: print('Menor')`."
+                },
+                {
+                    "id": "c2",
+                    "title": "Bucles for",
+                    "explicacion": "El bucle `for` recorre elementos de listas, tuplas, diccionarios o rangos: `for i in range(5): print(i)`."
+                },
+                {
+                    "id": "c3",
+                    "title": "Bucles while",
+                    "explicacion": "`while` ejecuta un bloque mientras se cumpla la condición: `while contador < 5: contador += 1`."
+                }
+            ],
+            "video": "",
+            "dato": "Condicionales y bucles son esenciales para programar lógica repetitiva y decisiones inteligentes."
+        },
+        {
+            "id": 4,
+            "title": "Funciones y módulos",
+            "description": "Organiza tu código en bloques reutilizables y aprende a importar funcionalidades externas.",
+            "lecciones": [
+                {
+                    "id": "d1",
+                    "title": "Definiendo funciones",
+                    "explicacion": "Las funciones se definen con `def`: `def saludar(nombre): print('Hola', nombre)`. Permiten organizar y reutilizar código."
+                },
+                {
+                    "id": "d2",
+                    "title": "Parámetros y retorno",
+                    "explicacion": "Las funciones pueden recibir parámetros y devolver valores con `return`: `def sumar(a, b): return a + b`."
+                },
+                {
+                    "id": "d3",
+                    "title": "Módulos y librerías",
+                    "explicacion": "Python permite importar módulos con `import math` o `from math import sqrt`. Esto extiende la funcionalidad de tu código sin reinventar la rueda."
+                }
+            ],
+            "video": "",
+            "dato": "Funciones y módulos hacen que tu código sea más limpio, modular y mantenible."
+        },
+        {
+            "id": 5,
+            "title": "Listas, tuplas y diccionarios",
+            "description": "Aprenderás a manejar colecciones de datos y estructuras complejas.",
+            "lecciones": [
+                {
+                    "id": "e1",
+                    "title": "Listas",
+                    "explicacion": "Las listas (`list`) almacenan elementos ordenados y son mutables: `frutas = ['manzana', 'banana']`. Métodos comunes: `append()`, `pop()`, `sort()`."
+                },
+                {
+                    "id": "e2",
+                    "title": "Tuplas",
+                    "explicacion": "Las tuplas (`tuple`) son colecciones ordenadas pero inmutables: `coordenadas = (10, 20)`."
+                },
+                {
+                    "id": "e3",
+                    "title": "Diccionarios",
+                    "explicacion": "Los diccionarios (`dict`) almacenan pares `clave: valor`: `persona = {'nombre': 'Angelo', 'edad': 14}`. Se accede con `persona['nombre']`."
+                }
+            ],
+            "video": "",
+            "dato": "Estas estructuras permiten organizar datos de manera eficiente y accesible."
+        },
+        {
+            "id": 6,
+            "title": "Python avanzado y buenas prácticas",
+            "description": "Explora Python moderno y aprende a escribir código limpio y profesional.",
+            "lecciones": [
+                {
+                    "id": "f1",
+                    "title": "Comprensión de listas",
+                    "explicacion": "Una forma rápida y elegante de crear listas: `cuadrados = [x**2 for x in range(5)]`."
+                },
+                {
+                    "id": "f2",
+                    "title": "Manejo de errores",
+                    "explicacion": "Con `try`, `except` puedes controlar errores y evitar que tu programa se detenga inesperadamente."
+                },
+                {
+                    "id": "f3",
+                    "title": "Buenas prácticas",
+                    "explicacion": "Escribir código limpio, usar nombres descriptivos, comentarios y mantener modularidad asegura que tu código sea profesional y fácil de mantener."
+                }
+            ],
+            "video": "",
+            "dato": "Python moderno, limpio y organizado es la clave para proyectos profesionales y escalables."
+        }
+    ]
+}
