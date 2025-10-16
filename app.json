@@ -2,12 +2,12 @@
   "expo": {
     "name": "CodeBase",
     "slug": "CodeBase",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
-    "scheme": "codebase://",
+    "scheme": "codebase",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -29,7 +29,8 @@
     },
     "plugins": [
       "expo-router",
-      "expo-video"
+      "expo-video",
+      "expo-font"
     ],
     "extra": {
       "router": {},
