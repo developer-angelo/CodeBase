@@ -1,21 +1,21 @@
 import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useLocalSearchParams, Stack } from 'expo-router';
+import { useLocalSearchParams, useSearchParams, useSegments, Stack } from 'expo-router';
 import { Video } from 'expo-video';
 import Markdown from 'react-native-markdown-display';
 
-import html from '../cursos_data/html.json';
-import css from '../cursos_data/css.json';
-import javascript from '../cursos_data/javascript.json';
-import python from '../cursos_data/python.json';
-import php from '../cursos_data/php.json';
-import sql from '../cursos_data/sql.json';
-import nodejs from '../cursos_data/nodejs.json';
-import framework7 from '../cursos_data/framework7.json';
-import react from '../cursos_data/react.json';
-import reactnative from '../cursos_data/reactnative.json';
-import flutter from '../cursos_data/flutter.json';
-import ciberseguridad from '../cursos_data/ciberseguridad.json';
+import html from './data/html.json';
+import css from './data/css.json';
+import javascript from './data/javascript.json';
+import python from './data/python.json';
+import php from './data/php.json';
+import sql from './data/sql.json';
+import nodejs from './data/nodejs.json';
+import framework7 from './data/framework7.json';
+import react from './data/react.json';
+import reactnative from './data/reactnative.json';
+import flutter from './data/flutter.json';
+import ciberseguridad from './data/ciberseguridad.json';
 
 const cursosMap = {
     'html': html,
@@ -35,7 +35,21 @@ const cursosMap = {
 const { width } = Dimensions.get('window');
 
 export default function IdCurso() {
-    const { id } = useLocalSearchParams();
+    // Intentamos obtener el id desde varias fuentes para evitar casos donde llegue vacío
+    const localParams = useLocalSearchParams();
+    const searchParams = useSearchParams();
+    const segments = useSegments();
+
+    let { id } = localParams || {};
+    if (!id && searchParams) id = searchParams.id;
+    if (!id && segments && segments.length) id = segments[segments.length - 1];
+
+    // Normalizar a string (o cadena vacía)
+    id = id ? String(id) : '';
+
+    // Debug útil en consola (se puede eliminar luego)
+    console.log('[IdCurso] route params:', { localParams, searchParams, segments, resolvedId: id });
+
     const cursoData = cursosMap[id] || null;
 
     if (!cursoData) {
@@ -46,28 +60,28 @@ export default function IdCurso() {
             </View>
         );
     }
-    
+
     return (
         <ScrollView style={styles.body}>
-            
+
             {/* Título de la cabecera de la Stack */}
-            <Stack.Screen options={{ title: cursoData.name }} /> 
+            <Stack.Screen options={{ title: cursoData.name }} />
 
             {/* Título Principal y Descripción General del Curso */}
             <Text style={styles.title}>
                 {cursoData.name}
             </Text>
-            
+
             <Text style={styles.description}>
                 {cursoData.description}
             </Text>
-            
+
             <Text style={styles.subtitle}>Contenido por Módulo</Text>
-            
+
             {/* MAPEO 1: Recorre los MÓDULOS */}
             {cursoData.modulos.map((modulo, i) => (
-                <View 
-                    key={modulo.id || i} 
+                <View
+                    key={modulo.id || i}
                     style={styles.moduloContainer}
                 >
                     {/* Título y Descripción del Módulo */}
@@ -83,27 +97,27 @@ export default function IdCurso() {
                         <View style={styles.videoWrapper}>
                             <Video
                                 style={styles.video}
-                                source={{ uri: modulo.video }} 
+                                source={{ uri: modulo.video }}
                                 useNativeControls
                                 resizeMode="contain"
                                 isLooping={false}
                             />
                         </View>
                     )}
-                    
+
                     <Text style={styles.leccionesHeader}>Lecciones:</Text>
-                    
+
                     {/* MAPEO 2: Recorre las LECCIONES y MUESTRA TODO */}
                     {modulo.lecciones.map((leccion, j) => (
                         <View key={leccion.id || j} style={styles.leccionItem}>
-                            
+
                             {/* Título de la Lección */}
                             <Text style={styles.leccionTitle}>
                                 - {leccion.title}
                             </Text>
-                            
+
                             {/* EXPLICACIÓN COMPLETA CON FORMATO MARKDOWN */}
-                            <Markdown style={markdownStyles}> 
+                            <Markdown style={markdownStyles}>
                                 {leccion.explicacion}
                             </Markdown>
 
@@ -112,7 +126,7 @@ export default function IdCurso() {
 
                     {/* DATO CURIOSO/IMPORTANTE */}
                     <Text style={styles.dato}>
-                        <Text style={{fontWeight: 'bold'}}>Dato:</Text> {modulo.dato}
+                        <Text style={{ fontWeight: 'bold' }}>Dato:</Text> {modulo.dato}
                     </Text>
 
                 </View>
@@ -138,8 +152,8 @@ const markdownStyles = {
         color: 'white',
     },
     // Código en línea (usando `code`)
-    code_inline: { 
-        backgroundColor: '#2e3343', 
+    code_inline: {
+        backgroundColor: '#2e3343',
         color: '#61ea8e',
         paddingHorizontal: 4,
         borderRadius: 3,
@@ -179,7 +193,7 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     subtitle: {
-        color: '#61ea8e', 
+        color: '#61ea8e',
         fontSize: 27,
         fontWeight: 'bold',
         textAlign: 'center',
@@ -189,7 +203,7 @@ const styles = StyleSheet.create({
     // Estilos para el MÓDULO (contenedor principal)
     moduloContainer: {
         padding: 15,
-        backgroundColor: '#1a1d29', 
+        backgroundColor: '#1a1d29',
         marginHorizontal: 15,
         borderRadius: 8,
         marginBottom: 15
@@ -230,8 +244,8 @@ const styles = StyleSheet.create({
     },
     leccionItem: {
         paddingVertical: 10,
-        borderLeftWidth: 3, 
-        borderLeftColor: 'rgba(97, 234, 142, 0.5)', 
+        borderLeftWidth: 3,
+        borderLeftColor: 'rgba(97, 234, 142, 0.5)',
         paddingLeft: 10,
         marginBottom: 5,
     },
