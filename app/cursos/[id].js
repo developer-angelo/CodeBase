@@ -4,18 +4,18 @@ import { useLocalSearchParams, useSearchParams, useSegments, Stack } from 'expo-
 import { Video } from 'expo-video';
 import Markdown from 'react-native-markdown-display';
 
-import html from './data/html.json';
-import css from './data/css.json';
-import javascript from './data/javascript.json';
-import python from './data/python.json';
-import php from './data/php.json';
-import sql from './data/sql.json';
-import nodejs from './data/nodejs.json';
-import framework7 from './data/framework7.json';
-import react from './data/react.json';
-import reactnative from './data/reactnative.json';
-import flutter from './data/flutter.json';
-import ciberseguridad from './data/ciberseguridad.json';
+import html from '../../assets/data/html.json';
+import css from '../../assets/data/css.json';
+import javascript from '../../assets/data/javascript.json';
+import python from '../../assets/data/python.json';
+import php from '../../assets/data/php.json';
+import sql from '../../assets/data/sql.json';
+import nodejs from '../../assets/data/nodejs.json';
+import framework7 from '../../assets/data/framework7.json';
+import react from '../../assets/data/react.json';
+import reactnative from '../../assets/data/reactnative.json';
+import flutter from '../../assets/data/flutter.json';
+import ciberseguridad from '../../assets/data/ciberseguridad.json';
 
 const cursosMap = {
     'html': html,
@@ -48,7 +48,6 @@ export default function IdCurso() {
     id = id ? String(id) : '';
 
     // Debug útil en consola (se puede eliminar luego)
-    console.log('[IdCurso] route params:', { localParams, searchParams, segments, resolvedId: id });
 
     const cursoData = cursosMap[id] || null;
 

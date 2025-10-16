@@ -14,84 +14,84 @@ export default function Cursos() {
             <Text style={styles.title}>Bienvenido a los <Text style={styles.mark}>Cursos</Text></Text>
             
             <View style={styles.cards}>
-              <Link href="/html">
+              <Link href="/cursos/html">
                 <View style={styles.card}>
                   <FontAwesome name="html5" size={70} color="#fd714b" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso HTML</Text>
                   <Text style={styles.text}>Aprende a elaborar plataformas webs, armando su esqueleto ☠.</Text>
                 </View>
               </Link>
-              <Link href="/css">
+              <Link href="/cursos/css">
                 <View style={styles.card}>
                   <Fontisto name="css3" size={70} color="#09f" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso CSS</Text>
                   <Text style={styles.text}>Aprende a darle estilo y formato a tus páginas web, transformando estructuras planas en experiencias visuales atractivas 🎨.</Text>
                 </View>
               </Link>
-              <Link href="/javascript">
+              <Link href="/cursos/javascript">
                 <View style={styles.card}>
                   <Ionicons name="logo-javascript" size={70} color="yellow" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso JS</Text>
                   <Text style={styles.text}>Aprende el lenguaje de programación que da vida a las páginas web, desde interactividad básica hasta lógica avanzada ⚡.</Text>
                 </View>
               </Link>
-              <Link href="/python">
+              <Link href="/cursos/python">
                 <View style={styles.card}>
                   <FontAwesome5 name="python" size={70} color="#ffa808" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso Python</Text>
                   <Text style={styles.text}>Aprende Python, uno de los lenguajes más populares y versátiles del mundo, ideal para desarrollo web, automatización y ciencia de datos 🐍.</Text>
                 </View>
               </Link>
-              <Link href="/php">
+              <Link href="/cursos/php">
                 <View style={styles.card}>
                   <Fontisto name="php" size={70} color="#7377ad" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso PHP</Text>
                   <Text style={styles.text}>Aprende PHP, el lenguaje de programación del lado del servidor que impulsa millones de sitios web, incluyendo WordPress y plataformas dinámicas 🖥️.</Text>
                 </View>
               </Link>
-              <Link href="/sql">
+              <Link href="/cursos/sql">
                 <View style={styles.card}>
                   <Fontisto name="mysql" size={70} color="#98d7f4" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso SQL y SQLite</Text>
                   <Text style={styles.text}>Aprende SQL y SQLite para manejar bases de datos, almacenar información y consultarla de manera eficiente 🗄️.</Text>
                 </View>
               </Link>
-              <Link href="/nodejs">
+              <Link href="/cursos/nodejs">
                 <View style={styles.card}>
                   <Ionicons name="logo-nodejs" size={70} color="#90ca51" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso Node.JS</Text>
                   <Text style={styles.text}>Aprende Node.js, el entorno de ejecución de JavaScript en el servidor, para crear aplicaciones rápidas, escalables y modernas 🖥️.</Text>
                 </View>
               </Link>
-              <Link href="/framework7">
+              <Link href="/cursos/framework7">
                 <View style={styles.card}>
                   <MaterialCommunityIcons name="numeric-7-circle" size={70} color="#ef3b17" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso Framework7</Text>
                   <Text style={styles.text}>Aprende Framework7 para crear aplicaciones móviles híbridas con apariencia nativa usando HTML, CSS y JavaScript 📲.</Text>
                 </View>
               </Link>
-              <Link href="/react">
+              <Link href="/cursos/react">
                 <View style={styles.card}>
                   <Fontisto name="react" size={70} color="cyan" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso React.JS</Text>
                   <Text style={styles.text}>Aprende React, la librería de JavaScript para construir interfaces de usuario modernas, dinámicas y reactivas 💻.</Text>
                 </View>
               </Link>
-              <Link href="/reactnative">
+              <Link href="/cursos/reactnative">
                 <View style={styles.card}>
                   <Fontisto name="react" size={70} color="cyan" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso React Native</Text>
                   <Text style={styles.text}>Aprende React Native para crear aplicaciones móviles nativas usando JavaScript y React, compatibles con iOS y Android 📲.</Text>
                 </View>
               </Link>
-              <Link href="/flutter">
+              <Link href="/cursos/flutter">
                 <View style={styles.card}>
                   <FontAwesome6 name="flutter" size={70} color="#09f" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso Flutter</Text>
                   <Text style={styles.text}>Aprende Flutter para crear aplicaciones móviles nativas y multiplataforma con rendimiento nativo usando Dart 📲.</Text>
                 </View>
               </Link>
-              <Link href="/ciberseguridad">
+              <Link href="/cursos/ciberseguridad">
                 <View style={styles.card}>
                   <FontAwesome5 name="dragon" size={70} color="white" style={{textAlign: 'center', padding: 15}} />
                   <Text style={styles.titleCard}>Curso Ciberseguridad con Kali Linux</Text>
