@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, Alert } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useLocalSearchParams, Stack } from 'expo-router';
-import { Video } from 'expo-video';
+import { Video } from 'expo-av';
 import Markdown from 'react-native-markdown-display';
 
 // imports JSON (como ya los tienes)
@@ -63,10 +63,20 @@ export default function IdCurso() {
                     {modulo.video && modulo.video !== "AQUI_URL_DE_VIDEO_SUPABASE" && (
                         <View style={styles.videoWrapper}>
                             <Video
-                                style={styles.video}
                                 source={{ uri: modulo.video }}
+                                style={styles.video}
                                 useNativeControls
                                 resizeMode="contain"
+                                shouldPlay={false}
+                                isLooping={false}
+                                onLoad={(data) => {
+                                    const duracion = (data.durationMillis / 1000).toFixed(2);
+                                    console.log(`✅ Video cargado correctamente: ${duracion} segundos`);
+                                }}
+                                onError={(error) => {
+                                    console.log("❌ Error al cargar video:", error);
+                                }}
+
                             />
                         </View>
                     )}

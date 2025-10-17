@@ -48,7 +48,7 @@
                     "explicacion": "La sección `<body>` es el corazón del documento, ya que contiene todo el contenido que el usuario puede ver e interactuar: texto, imágenes, videos, formularios, y otros elementos. Es donde se construye la interfaz visual de la página web."
                 }
             ],
-            "video": "",
+            "video": "https://fwfnrpvtldgyvgorzwrp.supabase.co/storage/v1/object/public/Videos/html_1.mp4",
             "dato": "Las etiquetas `<head>` y `<body>` son hijos directos de la etiqueta `<html>`, definiendo la estructura semántica principal del documento."
         },
         {
@@ -144,9 +144,8 @@
                     "explicacion": "Mantener un código limpio, utilizar títulos descriptivos y metaetiquetas ayuda a que los motores de búsqueda indexen mejor tu sitio y mejore su rendimiento."
                 }
             ],
-            "video": "",
+            "video": "https://fwfnrpvtldgyvgorzwrp.supabase.co/storage/v1/object/public/Videos/html_2.mp4",
             "dato": "La accesibilidad y buenas prácticas no solo son éticas, sino que también potencian la visibilidad de tu web."
         }
-
     ]
 }
