@@ -1,53 +1,62 @@
-import { View, Text, StyleSheet, ScrollView, Dimensions, Alert } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, Dimensions, ActivityIndicator } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useLocalSearchParams, Stack } from 'expo-router';
 import { Video } from 'expo-av';
 import Markdown from 'react-native-markdown-display';
 
-// imports JSON (como ya los tienes)
-import html from '../../assets/data/html.json';
-import css from '../../assets/data/css.json';
-import javascript from '../../assets/data/javascript.json';
-import python from '../../assets/data/python.json';
-import php from '../../assets/data/php.json';
-import sql from '../../assets/data/sql.json';
-import nodejs from '../../assets/data/nodejs.json';
-import framework7 from '../../assets/data/framework7.json';
-import react from '../../assets/data/react.json';
-import reactnative from '../../assets/data/reactnative.json';
-import flutter from '../../assets/data/flutter.json';
-import ciberseguridad from '../../assets/data/ciberseguridad.json';
-
-const cursosMap = {
-    html,
-    css,
-    javascript,
-    python,
-    php,
-    sql,
-    nodejs,
-    framework7,
-    react,
-    reactnative,
-    flutter,
-    ciberseguridad,
-};
-
 const { width } = Dimensions.get('window');
 
 export default function IdCurso() {
     const { id } = useLocalSearchParams();
-    const cursoData = cursosMap[id] || null;
+    const [cursoData, setCursoData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    if (!cursoData) {
+    useEffect(() => {
+        const fetchCurso = async () => {
+            try {
+                const response = await fetch(`https://developer-angelo.github.io/api-for-teccora/cursos_codebase/${id}.json`);
+
+                if (!response.ok) {
+                    throw new Error(`Error HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                setCursoData(data);
+            } catch (err) {
+                console.error("❌ Error al cargar curso:", err);
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCurso();
+    }, [id]);
+
+    // 🌀 Pantalla de carga
+    if (loading) {
         return (
             <View style={[styles.body, { justifyContent: 'center', alignItems: 'center' }]}>
-                <Text style={styles.title}>¡Error!</Text>
-                <Text style={styles.description}>No se encontró el curso con ID: {id}</Text>
+                <ActivityIndicator size="large" color="#61ea8e" />
+                <Text style={{ color: 'white', marginTop: 10 }}>Cargando curso...</Text>
             </View>
         );
     }
 
+    // ⚠️ Si hay error o el curso no existe
+    if (error || !cursoData) {
+        return (
+            <View style={[styles.body, { justifyContent: 'center', alignItems: 'center', padding: 20 }]}>
+                <Text style={styles.title}>¡Error!</Text>
+                <Text style={styles.description}>No se encontró el curso con ID: {id}</Text>
+                {error && <Text style={{ color: 'red', marginTop: 10 }}>Detalles: {error}</Text>}
+            </View>
+        );
+    }
+
+    // ✅ Render del contenido del curso
     return (
         <ScrollView style={styles.body}>
             <Stack.Screen options={{ title: cursoData.name }} />
@@ -55,6 +64,7 @@ export default function IdCurso() {
             <Text style={styles.description}>{cursoData.description}</Text>
 
             <Text style={styles.subtitle}>Contenido por Módulo</Text>
+
             {cursoData.modulos.map((modulo, i) => (
                 <View key={modulo.id || i} style={styles.moduloContainer}>
                     <Text style={styles.moduloTitle}>{modulo.id}. {modulo.title}</Text>
@@ -76,7 +86,6 @@ export default function IdCurso() {
                                 onError={(error) => {
                                     console.log("❌ Error al cargar video:", error);
                                 }}
-
                             />
                         </View>
                     )}
@@ -101,40 +110,33 @@ export default function IdCurso() {
 }
 
 
-
 // Estilos para el renderizado de Markdown
 const markdownStyles = {
-    // Estilo general para todo el texto
     body: {
         color: 'rgba(255, 255, 255, 0.8)',
         fontSize: 15,
         paddingTop: 5,
     },
-    // Negrita (usando **)
     strong: {
         fontWeight: 'bold',
         color: 'white',
     },
-    // Código en línea (usando `code`)
     code_inline: {
         backgroundColor: '#2e3343',
         color: '#61ea8e',
         paddingHorizontal: 4,
         borderRadius: 3,
-        fontFamily: 'monospace', // Mejorar la fuente para código si es posible
+        fontFamily: 'monospace',
     },
-    // Énfasis/Cursiva (usando *)
     em: {
         fontStyle: 'italic',
         color: 'rgba(255, 255, 255, 0.9)',
     },
-    // Eliminamos el padding/margin default de otros tags si no se usan
     paragraph: {
         marginTop: 0,
         marginBottom: 5,
-    }
+    },
 };
-
 
 const styles = StyleSheet.create({
     body: {
@@ -164,7 +166,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 10,
     },
-    // Estilos para el MÓDULO (contenedor principal)
     moduloContainer: {
         padding: 15,
         backgroundColor: '#1a1d29',
@@ -183,10 +184,9 @@ const styles = StyleSheet.create({
         fontSize: 15,
         marginBottom: 10,
     },
-    // Video
     videoWrapper: {
         width: '100%',
-        height: width * 0.56, // Proporción 16:9
+        height: width * 0.56,
         backgroundColor: '#000',
         marginBottom: 15,
         borderRadius: 8,
@@ -195,7 +195,6 @@ const styles = StyleSheet.create({
     video: {
         flex: 1,
     },
-    // Estilos para las LECCIONES (anidadas)
     leccionesHeader: {
         color: 'white',
         fontSize: 18,

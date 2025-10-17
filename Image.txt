@@ -1,0 +1,11 @@
+{modulo.image && modulo.image !== "AQUI_URL_DE_IMG_GOOGLE" && (
+     <View style={styles.videoWrapper}>
+          <Image
+               source={{ uri: modulo.image }}
+               style={styles.video}
+               resizeMode="contain"
+          />
+     </View>
+)}
+
+`import { Image } from 'expo-image';`
