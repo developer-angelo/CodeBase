@@ -25,7 +25,7 @@ export default function IdCurso() {
                 const data = await response.json();
                 setCursoData(data);
             } catch (err) {
-                console.error("❌ Error al cargar curso:", err);
+                console.error("Error al cargar curso:", err);
                 setError(err.message);
             } finally {
                 setLoading(false);

@@ -1,7 +1,11 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ToastAndroid } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 export default function Projects() {
+     const notProject = () => {
+          ToastAndroid.show('Aún no hemos empezado el proyecto 👀', ToastAndroid.SHORT);
+     };
+
      return (
           <ScrollView style={styles.body}>
                <Text style={styles.title}>Bienvenido a los <Text style={styles.mark}>Proyectos</Text></Text>
@@ -9,13 +13,18 @@ export default function Projects() {
                <View style={styles.cards}>
                     <View style={styles.card}>
                          <Text style={styles.titleCard}>Clon de Yape</Text>
-                         <Text style={styles.text}>Crearemos un clon de Yape, una app de pago, será hecho en la web con React.JS, usando una API de usuarios simulada con un frontend exquisito e identico al original. Al subir el proyecto al repo de GitHub, habrán cambios en el diseño y logos para evitar problemas legales.</Text>
-                         <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 20 }}>
-                              <TouchableOpacity style={{ marginTop: 10, backgroundColor: '#61ea8e', padding: 10, borderRadius: 5, alignItems: 'center' }}>
-                                   <Text style={{ color: 'black', fontWeight: 'bold' }}>Ver Repo</Text>
+                         <Text style={styles.text}>Crearemos un clon de Yape, una app de pago, será hecho en la web con React.JS, usando una API de usuarios simulada con un FrontEnd exquisito e idéntico al original. Al subir el proyecto al repo de GitHub, habrán cambios en el diseño y logos para evitar problemas legales.</Text>
+                         <View style={{
+                              padding: 10,
+                              alignItems: 'center',
+                              flexDirection: 'row',
+                              gap: 5
+                         }}>
+                              <TouchableOpacity onPress={notProject} style={{ marginTop: 10, backgroundColor: '#61ea8e', padding: 10, borderRadius: 5, alignItems: 'center', borderWidth: 2, borderColor: '#61ea8e', width: 255 }}>
+                                   <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 18 }}>Ver Repo</Text>
                               </TouchableOpacity>
-                              <TouchableOpacity style={{ marginTop: 10, borderWidth: 2, borderColor: '#61ea8e', padding: 10, borderRadius: 5, alignItems: 'center' }}>
-                                   <Text style={{ color: 'white' }}>Ver Demo</Text>
+                              <TouchableOpacity onPress={notProject} style={{ marginTop: 10, borderWidth: 2, borderColor: '#4e3576', padding: 10, borderRadius: 5, alignItems: 'center' }}>
+                                   <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18 }}>Ver Demo</Text>
                               </TouchableOpacity>
                          </View>
                     </View>
