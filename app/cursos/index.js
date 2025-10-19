@@ -7,6 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import Foundation from '@expo/vector-icons/Foundation';
 
 
 export default function Cursos() {
@@ -97,6 +98,20 @@ export default function Cursos() {
                               <FontAwesome5 name="dragon" size={70} color="white" style={{ textAlign: 'center', padding: 15 }} />
                               <Text style={styles.titleCard}>Curso Ciberseguridad con Kali Linux</Text>
                               <Text style={styles.text}>Aprende Kali Linux y ciberseguridad: desde comandos básicos hasta hacking ético y pruebas de penetración 🔐.</Text>
+                         </View>
+                    </Link>
+                    <Link href="/cursos/astro">
+                         <View style={styles.card}>
+                              <FontAwesome5 name="user-astronaut" size={70} color="#e837b8" style={{ textAlign: 'center', padding: 15 }} />
+                              <Text style={styles.titleCard}>Curso de Astro</Text>
+                              <Text style={styles.text}>Aprende Astro, un framework moderno para crear sitios web rápidos, estáticos y altamente optimizados 🌐.</Text>
+                         </View>
+                    </Link>
+                    <Link href="/cursos/nextjs">
+                         <View style={styles.card}>
+                              <Foundation name="next" size={70} color="white" style={{ textAlign: 'center', padding: 15 }} />
+                              <Text style={styles.titleCard}>Curso de Next.JS</Text>
+                              <Text style={styles.text}>Aprende Next.js, un framework de React para construir aplicaciones web rápidas, escalables y optimizadas con SSR y SSG 🌐.</Text>
                          </View>
                     </Link>
                </View>

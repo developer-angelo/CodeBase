@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, Dimensions, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, ActivityIndicator, Image } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useLocalSearchParams, Stack } from 'expo-router';
 import { Video } from 'expo-av';
@@ -70,6 +70,29 @@ export default function IdCurso() {
                     <Text style={styles.moduloTitle}>{modulo.id}. {modulo.title}</Text>
                     <Text style={styles.moduloDescription}>{modulo.description}</Text>
 
+
+
+                    {modulo.image && modulo.image !== "AQUI_URL_DE_IMG_GOOGLE" && (
+                        <View style={styles.videoWrapper}>
+                            <Image
+                                source={{ uri: modulo.image }}
+                                style={styles.video}
+                                resizeMode="contain"
+                            />
+                        </View>
+                    )}
+
+                    <Text style={styles.leccionesHeader}>Lecciones:</Text>
+                    {modulo.lecciones.map((leccion, j) => (
+                        <View key={leccion.id || j} style={styles.leccionItem}>
+                            <Text style={styles.leccionTitle}>- {leccion.title}</Text>
+                            <Markdown style={markdownStyles}>{leccion.explicacion}</Markdown>
+                        </View>
+                    ))}
+
+                    <Text style={styles.dato}>
+                        <Text style={{ fontWeight: 'bold' }}>Dato:</Text> {modulo.dato}
+                    </Text>
                     {modulo.video && modulo.video !== "AQUI_URL_DE_VIDEO_SUPABASE" && (
                         <View style={styles.videoWrapper}>
                             <Video
@@ -89,18 +112,6 @@ export default function IdCurso() {
                             />
                         </View>
                     )}
-
-                    <Text style={styles.leccionesHeader}>Lecciones:</Text>
-                    {modulo.lecciones.map((leccion, j) => (
-                        <View key={leccion.id || j} style={styles.leccionItem}>
-                            <Text style={styles.leccionTitle}>- {leccion.title}</Text>
-                            <Markdown style={markdownStyles}>{leccion.explicacion}</Markdown>
-                        </View>
-                    ))}
-
-                    <Text style={styles.dato}>
-                        <Text style={{ fontWeight: 'bold' }}>Dato:</Text> {modulo.dato}
-                    </Text>
                 </View>
             ))}
 

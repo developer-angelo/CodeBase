@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Link } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function About() {
   return (
@@ -14,12 +15,19 @@ export default function About() {
         </Text>
         <Text style={styles.subtitle}>¿Cómo son los cursos?</Text>
         <Text style={styles.description}>
-        Los cursos, están hecho a base de información oficial, además de tener una ayuda de videos en donde se explica de forma más profunda y se muestran ejercicios. Los videos son elaborados por Angelo Benites.
+          Los cursos, están hecho a base de información oficial, además de tener una ayuda de videos en donde se explica de forma más profunda y se muestran ejercicios. Los videos son elaborados por Angelo Benites.
+        </Text>
+        <Text style={styles.subtitle}>Angelo Benites</Text>
+        <Text style={styles.description}>
+          Angelo Benites es un desarrollador de software, creador de todo Teccora y CodeBase. Tiene 14 años y ha desarrollado múltiples proyectos, además de contribuir en proyectos de código abierto.
         </Text>
         <Text style={styles.subtitle}>¿Dónde se alojan los proyectos?</Text>
-        <Text style={styles.description}>Los proyectos, que se elaboran en el transcurso de los cursos, se hospedan en un repositorio de GitHub, exactamente: </Text>
+        <Text style={styles.description}>Los proyectos, que se elaboran en el transcurso de los cursos, se hospedan en un repositorio de GitHub, de Angelo Benites (Github: developer-angelo). ¿Quieres visitar el repo? Presiona el botón de abajo.</Text>
+        <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 15, backgroundColor: '#61ea8e', padding: 10, borderRadius: 8, gap: 10 }} onPress={() => { Linking.openURL('https://developer-angelo.github.io/codebase-projects/') }}>
+          <Text style={{ color: '#000', fontSize: 18, fontWeight: 'bold' }}>Ir al Repo</Text><AntDesign style={{ fontWeight: 'bold' }} name="github" size={25} color="#000" />
+        </TouchableOpacity>
       </View>
-      
+
       <StatusBar style="light" />
     </ScrollView>
   );
