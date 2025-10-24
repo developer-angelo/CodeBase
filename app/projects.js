@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ToastAndroid, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ToastAndroid, ActivityIndicator, Linking } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 
@@ -11,7 +11,7 @@ export default function Projects() {
      const [loading, setLoading] = useState(true);
 
      useEffect(() => {
-          fetch('https://developer-angelo.github.io/api-for-teccora/proyectos_codebase/proximos/data.json')
+          fetch('https://developer-angelo.github.io/api-for-teccora/proyectos_codebase/activos/data.json')
                .then(response => response.json())
                .then(data => {
                     setCourses(data);
@@ -43,12 +43,9 @@ export default function Projects() {
                                    <Text style={styles.titleCard}>{course.title}</Text>
                                    <Text style={styles.text}>{course.description}</Text>
                                    <View style={{
-                                        padding: 10,
-                                        alignItems: 'center',
-                                        flexDirection: 'row',
-                                        gap: 5
+                                        padding: 10
                                    }}>
-                                        <TouchableOpacity onPress={notProject} style={{ marginTop: 10, backgroundColor: '#61ea8e', padding: 10, borderRadius: 5, alignItems: 'center', borderWidth: 2, borderColor: '#61ea8e', width: 255 }}>
+                                        <TouchableOpacity onPress={() => { Linking.openURL('https://github.com/developer-angelo/codebase-projects/') }} style={{ marginTop: 10, backgroundColor: '#61ea8e', padding: 10, borderRadius: 5, alignItems: 'center', borderWidth: 2, borderColor: '#61ea8e' }}>
                                              <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 18 }}>Ver Repo</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity onPress={notProject} style={{ marginTop: 10, borderWidth: 2, borderColor: '#4e3576', padding: 10, borderRadius: 5, alignItems: 'center' }}>
@@ -58,10 +55,11 @@ export default function Projects() {
                               </View>
                          ))}
                     </View>
-               )}
+               )
+               }
 
                <StatusBar style="light" backgroundColor="#11131f" />
-          </ScrollView>
+          </ScrollView >
      );
 }
 

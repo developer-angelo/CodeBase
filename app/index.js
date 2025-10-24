@@ -28,19 +28,19 @@ export default function Home() {
       </View>
       <View style={styles.cards}>
         <View style={styles.card}>
-          <FontAwesome name="leanpub" size={100} color="#61ea8e" style={{textAlign: 'center', padding: 15}}/>
+          <FontAwesome name="leanpub" size={100} color="#61ea8e" style={{ textAlign: 'center', padding: 15 }} />
           <Text style={styles.titleCard}>Muchos recursos</Text>
           <Text style={styles.text}>En CodeBase, ofrecemos una amplia gama de cursos de programación y desarrollo. Nuestros cursos están diseñados para ser interactivos y prácticos, lo que te permitirá aprender de manera efectiva y rápida.</Text>
         </View>
 
         <View style={styles.card}>
-          <FontAwesome5 name="free-code-camp" size={100} color="#61ea8e" style={{textAlign: 'center', padding: 15}}/>
+          <FontAwesome5 name="free-code-camp" size={100} color="#61ea8e" style={{ textAlign: 'center', padding: 15 }} />
           <Text style={styles.titleCard}>Todo Gratis</Text>
           <Text style={styles.text}>Todos nuestros cursos están disponibles de manera gratuita. No necesitas pagar nada para acceder a nuestros contenidos y mejorar tus habilidades de programación y desarrollo.</Text>
         </View>
 
         <View style={styles.card}>
-          <AntDesign name="folder-open" size={100} color="#61ea8e" style={{textAlign: 'center', padding: 15}}/>
+          <AntDesign name="folder-open" size={100} color="#61ea8e" style={{ textAlign: 'center', padding: 15 }} />
           <Text style={styles.titleCard}>Proyectos Open-Source</Text>
           <Text style={styles.text}>En CodeBase, valoramos la colaboración y la comunidad. Por eso, todos nuestros cursos están basados en proyectos open-source. Esto significa que puedes contribuir al desarrollo de estos proyectos y mejorar tus habilidades de programación al mismo tiempo.</Text>
         </View>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   },
   link: {
     marginTop: 15,
-    width: 200,
+    width: '48%',
     padding: 10,
     borderRadius: 10,
     textAlign: 'center',
@@ -100,11 +100,11 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: 'center',
     flexDirection: 'row',
-    gap: 5
+    justifyContent: 'space-between'
   },
   btnA: {
     marginTop: 15,
-    width: 200,
+    width: '48%',
     padding: 10,
     borderRadius: 10,
     textAlign: 'center',

@@ -23,7 +23,7 @@ export default function About() {
         </Text>
         <Text style={styles.subtitle}>¿Dónde se alojan los proyectos?</Text>
         <Text style={styles.description}>Los proyectos, que se elaboran en el transcurso de los cursos, se hospedan en un repositorio de GitHub, de Angelo Benites (Github: developer-angelo). ¿Quieres visitar el repo? Presiona el botón de abajo.</Text>
-        <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 15, backgroundColor: '#61ea8e', padding: 10, borderRadius: 8, gap: 10 }} onPress={() => { Linking.openURL('https://developer-angelo.github.io/codebase-projects/') }}>
+        <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 15, backgroundColor: '#61ea8e', padding: 10, borderRadius: 8, gap: 10 }} onPress={() => { Linking.openURL('https://github.com/developer-angelo/codebase-projects/') }}>
           <Text style={{ color: '#000', fontSize: 18, fontWeight: 'bold' }}>Ir al Repo</Text><AntDesign style={{ fontWeight: 'bold' }} name="github" size={25} color="#000" />
         </TouchableOpacity>
       </View>
